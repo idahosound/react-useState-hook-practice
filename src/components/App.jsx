@@ -10,10 +10,16 @@ function App() {
     return Time
   }
 
+  function updateTime(){
+    setTime(getTime)
+  }
+
+  setInterval(updateTime, 1000)
+
   return (
     <div className="container">
       <h1>{currentTime}</h1>
-      <button onClick={() => setTime(getTime)}>Get Time</button>
+      <button onClick={updateTime}>Get Time</button>
     </div>
   );  
 }
