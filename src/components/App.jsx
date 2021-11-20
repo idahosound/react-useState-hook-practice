@@ -1,12 +1,22 @@
 import React from "react";
 
+
 function App() {
+   
+  const [currentTime, setTime] = React.useState(getTime);
+
+  function getTime(){
+    const Time = new Date().toLocaleTimeString();
+    return Time
+  }
+
   return (
     <div className="container">
-      <h1>TIME</h1>
-      <button>Get Time</button>
+      <h1>{currentTime}</h1>
+      <button onClick={() => setTime(getTime)}>Get Time</button>
     </div>
-  );
+  );  
 }
 
 export default App;
+
